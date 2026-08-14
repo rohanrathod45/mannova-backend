@@ -22,7 +22,11 @@ connectDB();
 
 app.use(
   cors({
-    origin: "http://localhost:5173"
+    origin: [
+      "http://localhost:5173",
+      "https://mannova-frontend.onrender.com"
+    ],
+    credentials: true
   })
 );
 
@@ -60,8 +64,6 @@ app.get("/", (req, res) => {
     message: "Mannova Backend API is running"
   });
 });
-
-
 
 
 // ===============================
